@@ -1,0 +1,25 @@
+@import '../../styles/mixins.scss';
+
+.container {
+  width: 400px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 50px;
+  margin-bottom: 25px;
+  @include container;
+
+  p {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 0;
+  }
+}
+
+.counter {
+  margin: 0;
+  @include container($background: white, $borderRadius: 5px, $padding: 15px 6px);
+}

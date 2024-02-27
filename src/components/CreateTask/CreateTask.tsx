@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { CreateTaskProps } from './CreateTask.interface';
 import { TaskInterface } from '../Task/Task.interface';
@@ -7,13 +7,16 @@ const CreateTask = ({ setTasks }: CreateTaskProps): JSX.Element => {
   const [task, setTask] = useState<TaskInterface>({
     id: '',
     name: '',
-    status: 'todo',
+    status: 'To be completed',
   });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = (e: FormEvent): void => {
     e.preventDefault();
-    setTasks((prev) => [...prev, { ...task, id: uuidv4() }]);
-    setTask({ id: '', name: '', status: 'todo' });
+
+    if (task.name.trim() !== '') {
+      setTasks((prev) => [...prev, { ...task, id: uuidv4() }]);
+      setTask({ id: '', name: '', status: 'todo' });
+    }
   };
 
   return (

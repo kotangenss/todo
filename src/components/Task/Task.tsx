@@ -1,5 +1,6 @@
 import { useDrag } from 'react-dnd';
 import { MyTaskProps } from './Task.interface';
+import styles from './Task.module.scss';
 
 const Task = ({ task, tasks, setTasks }: MyTaskProps): JSX.Element => {
   const [, drag] = useDrag(() => ({
@@ -16,7 +17,7 @@ const Task = ({ task, tasks, setTasks }: MyTaskProps): JSX.Element => {
   };
 
   return (
-    <div ref={drag}>
+    <div ref={drag} className={styles.container}>
       <p>{task.name}</p>
       <button type="button" onClick={(): void => handleRemove(task.id)}>
         -

@@ -1,0 +1,7 @@
+@import '../../styles/mixins.scss';
+
+.container {
+  @include container;
+  margin: 40px 0;
+  width: 100%;
+}

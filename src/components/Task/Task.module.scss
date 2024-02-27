@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  align-items: center;
+
+  p {
+    margin-right: 15px;
+  }
+
+  button {
+    height: fit-content;
+  }
+}

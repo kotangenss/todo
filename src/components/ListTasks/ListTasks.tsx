@@ -13,9 +13,9 @@ const ListTasks = ({ tasks, setTasks }: ListTasksProps): JSX.Element => {
   const [closed, setClosed] = useState<TaskInterface[]>([]);
 
   useEffect(() => {
-    const filterTodos = tasks.filter((task) => task.status === 'todo');
-    const filterInProgress = tasks.filter((task) => task.status === 'inprogress');
-    const filterClosed = tasks.filter((task) => task.status === 'closed');
+    const filterTodos = tasks.filter((task) => task.status === 'To be completed');
+    const filterInProgress = tasks.filter((task) => task.status === 'In progress');
+    const filterClosed = tasks.filter((task) => task.status === 'Closed');
 
     setTodos(filterTodos);
     setInProgress(filterInProgress);
@@ -33,7 +33,7 @@ const ListTasks = ({ tasks, setTasks }: ListTasksProps): JSX.Element => {
 
   const sectionRef = useRef(null);
 
-  const statuses = ['todo', 'inprogress', 'closed'];
+  const statuses = ['To be completed', 'In progress', 'Closed'];
 
   return (
     <div className={styles.container} ref={sectionRef}>
