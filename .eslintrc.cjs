@@ -50,6 +50,17 @@ module.exports = {
     'react/prop-types': 'off',
     'react/display-name': 'off',
     'prettier/prettier': ['error', { trailingComma: 'es5' }],
+    'react/function-component-definition': [
+      2,
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
+      },
+    ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      { devDependencies: false, optionalDependencies: false, peerDependencies: false },
+    ],
   },
   settings: {
     react: {
